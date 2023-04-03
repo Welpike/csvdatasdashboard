@@ -1,6 +1,6 @@
-import folium
 import os
 import webbrowser
+import folium
 
 def build_map(filepath):
     with open(filepath, 'r') as file:

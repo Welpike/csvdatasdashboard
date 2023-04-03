@@ -8,6 +8,21 @@
     <link rel="stylesheet" href="../static/main.css">
 </head>
 <body>
-    
+    <h1>FRANCE : Buildings protected as Historical Monuments (archives)</h1>
+    <p>Map :</p>
+    <iframe id="map_iframe" src="" height="700" width="1000"></iframe>
+
+    <a id="change_map_btn"></a>
+
+    <script>
+        let current_map = url.searchParams.get("map"),
+            maps = ["public", "private"];
+
+        // update iframe src (change map)
+        const url = new URL(window.location);
+        document.querySelector("#map_iframe").addAttribute("src", current_map);
+
+        document.querySelector("#change_map_btn").addAttribute("href", url.searchParams.set("map", ));
+    </script>
 </body>
 </html>
