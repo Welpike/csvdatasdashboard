@@ -1,5 +1,5 @@
-import os
-import webbrowser
+from os import getcwd
+from webbrowser import open as w_open
 import folium
 
 def build_map(filepath):
@@ -26,9 +26,29 @@ def build_htmlfile(filepath):
     with open(filepath, "w+") as file:
         file.write(
             """
-                
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Buildings protected as Historical Monuments (archives), France - CSVDATASDASHBOARD</title>
+                <link rel="stylesheet" href="../static/main.css">
+            </head>
+            <body>
+                <h1>FRANCE : Buildings protected as Historical Monuments (archives)</h1>
+                <p>Map :</p>
+                <iframe id="map_iframe" src="" height="700" width="1000"></iframe>
+
+                <a id="change_map_btn"></a>
+
+                <script src="../static/main.js"></script>
+            </body>
+            </html>
             """
         )
 
 
 build_map('datas/db.csv')
+build_htmlfile('templates/index.html')
+w_open(getcwd()+"/templates/index.html")
