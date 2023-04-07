@@ -5,6 +5,56 @@
     font-family: monospace;
 }
 
+body{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
 #change_map_btn{
     text-transform: capitalize;
+}
+
+header{
+  width:100%;
+  height: 10vh;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btns{
+  display: flex;
+  flex-direction: flex-end;
+  gap:30px;
+}
+
+#map-iframe{
+  width: 100%;
+  height: 90vh;
+  background-color: red;
+}
+
+#popup{
+  display:none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: 300px;
+  width:450px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  padding: 40px;
+}
+
+#popup_public, #popup_private{
+  display: none;
+  width: 100%;
+  flex-direction:column;
+}
+
+#popup.show, #popup_public.show, #popup_private.show{
+  display: flex;
 }

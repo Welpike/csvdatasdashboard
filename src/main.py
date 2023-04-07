@@ -45,7 +45,43 @@ def build_htmlfile(filepath, infos: dict):
     with open(filepath, "w+") as file:
         file.write(
             """
-                
+            <!DOCTYPE html>
+            <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Buildings protected as Historical Monuments (archives), France - CSVDATASDASHBOARD</title>
+                    <link rel="stylesheet" href="../static/main.css">
+                </head>
+                <body>
+                    <header>
+                        <div>
+                        <h1>FRANCE : Buildings protected as Historical Monuments (archives)</h1>
+                        <p>Map :</p>
+                        </div>
+                        <div class="btns">
+                        <a id="informations_popup">Informations</a>
+                        <a id="change_map_btn"></a>
+                        </div>
+                    </header>
+
+                    <iframe id="map_iframe" src="" height="700" width="1000"></iframe>
+
+                    <div id="popup">
+                        <div id="popup_public">
+                            <h3></h3>
+                            <p>Nombre de batiments : """+infos["town"]["nb"]+"""</p>
+                        </div>
+                        <div id="popup_private">
+                            <h3></h3>
+                            <p>Nombre de batiments : """+infos["private"]["nb"]+"""</p>
+                        </div>
+                    </div>
+
+                    <script src="../static/main.js"></script>
+                </body>
+            </html>
             """
         )
 
