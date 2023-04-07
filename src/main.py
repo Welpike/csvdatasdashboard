@@ -26,7 +26,7 @@ def build_map(filepath):
                     private.append(line_data[0])  
                     folium.Marker([float(line_data[coor[0]]),float(coor[1])],popup=line_data[6],icon=folium.Icon(color='red')).add_to(private_map)
         
-    town_map.save('./templates/embed/town.html')
+    town_map.save('./templates/embed/public.html')
     private_map.save('./templates/embed/private.html')
 
     info={
