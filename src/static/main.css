@@ -47,6 +47,7 @@ header{
   border: 1px solid #000;
   border-radius: 20px;
   padding: 40px;
+  background:#fff;
 }
 
 #popup_public, #popup_private{
