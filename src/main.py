@@ -66,7 +66,7 @@ def build_htmlfile(filepath, infos: dict):
                         </div>
                     </header>
 
-                    <iframe id="map_iframe" src=""></iframe>
+                    <iframe id="map_iframe" src="" style="width:100%;height:89.5vh;"></iframe>
 
                     <div id="popup">
                         <div id="popup_public">
