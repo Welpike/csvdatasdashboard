@@ -4,3 +4,5 @@ Dashboard for CSV datas (Buildings protected as Historical Monuments (archives),
 Lang : Fr
 
 Warning : the `./datas/db.csv` is really big (34 849 Ko).
+
+Download : https://github.com/Welpike/csvdatasdashboard/releases/tag/v1.0.0
