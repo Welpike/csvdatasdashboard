@@ -4,8 +4,8 @@ import folium
 
 def build_map(filepath):
     data_list=[]  # list of all building in Angers, France
-    town_map=folium.Map(location=[47.471646,-0.551846],zoom_start=13)
-    private_map=folium.Map(location=[47.471646,-0.551846],zoom_start=13)
+    town_map=folium.Map(location=[47.471646,-0.551846],zoom_start=14)
+    private_map=folium.Map(location=[47.471646,-0.551846],zoom_start=14)
     private=[]
     town=[]
     nb_private=0
@@ -15,7 +15,6 @@ def build_map(filepath):
             line_data=line.strip().split(";")
             if line_data[0]=="Angers" :
                 coor=line_data[-1].split(',')
-                print(line_data)
                 data_list.append(line_data)
                 if line_data[12]=='propriété de la commune':  
                     nb_town+=1
@@ -24,7 +23,7 @@ def build_map(filepath):
                 elif line_data[12]=='propriété privée':
                     nb_private+=1
                     private.append(line_data[0])  
-                    folium.Marker([float(line_data[coor[0]]),float(coor[1])],popup=line_data[6],icon=folium.Icon(color='red')).add_to(private_map)
+                    folium.Marker([float(coor[0]),float(coor[1])],popup=line_data[6],icon=folium.Icon(color='red')).add_to(private_map)
         
     town_map.save('./templates/embed/public.html')
     private_map.save('./templates/embed/private.html')
@@ -71,11 +70,11 @@ def build_htmlfile(filepath, infos: dict):
                     <div id="popup">
                         <div id="popup_public">
                             <h3></h3>
-                            <p>Nombre de batiments : """+infos["town"]["nb"]+"""</p>
+                            <p>Nombre de batiments : """+str(infos["town"]["nb"])+"""</p>
                         </div>
                         <div id="popup_private">
                             <h3></h3>
-                            <p>Nombre de batiments : """+infos["private"]["nb"]+"""</p>
+                            <p>Nombre de batiments : """+str(infos["private"]["nb"])+"""</p>
                         </div>
                     </div>
 
@@ -88,4 +87,9 @@ def build_htmlfile(filepath, infos: dict):
 
 infos=build_map('datas/db.csv')
 build_htmlfile("templates/index.html", infos)
-w_open(getcwd()+"/templates/index.html?map=public")
+
+print()
+print(f"The HTML file path : {getcwd()}/templates/index.html?map=public")
+print()
+
+w_open(getcwd()+"/templates/index.html?map=public")  # this instruction may be not works
