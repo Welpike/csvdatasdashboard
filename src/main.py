@@ -56,12 +56,12 @@ def build_htmlfile(filepath, infos: dict):
                 <body>
                     <header>
                         <div>
-                        <h1>FRANCE : Buildings protected as Historical Monuments (archives)</h1>
-                        <p>Map :</p>
+                            <h1>FRANCE : Buildings protected as Historical Monuments (archives)</h1>
+                            <p>Map :</p>
                         </div>
                         <div class="btns">
-                        <a id="informations_popup">Informations</a>
-                        <a id="change_map_btn"></a>
+                            <a id="informations_popup">Informations</a>
+                            <a id="change_map_btn"></a>
                         </div>
                     </header>
 
